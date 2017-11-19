@@ -2,17 +2,20 @@
 
 const trap = require('../')
 const cli = require('cli')
+const path = require('path')
 
-const options = cli.parse({
+cli.parse({
   address: [ 'a', 'address to fetch web page', 'string'],
   directory: [ 'd', 'directory to write the pages locally', 'file', './static' ]
 })
 
-if (!options.address) {
-  console.log("you must provide address to fetch")
-  process.exit(1)
-}
+cli.main((args, options) => {
+  if (!options.address) {
+    console.log("Usage: stasis -a url -d directory")
+    return
+  }
 
-trap(options.address, options.directory, function(e){
-  console.log(e)
+  trap(options.address, options.directory, function(e){
+    console.log(e)
+  })
 })
