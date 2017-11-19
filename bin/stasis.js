@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const trap = require('../')
-const debug = require('debug')("trap")
 const cli = require('cli')
 
 const options = cli.parse({
@@ -16,4 +15,4 @@ if (!options.address) {
 
 trap(options.address, options.directory, function(e){
   console.log(e)
-}, debug)
+})

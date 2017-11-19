@@ -1,6 +1,7 @@
 'use strict';
 
 const invariant = require('invariant')
+const debug = require('debug')("trap")
 const Crawler = require('simplecrawler')
 const fs = require('node-fs')
 const Spinner = require('cli-spinner').Spinner
@@ -9,11 +10,10 @@ const url = require('url')
 const path = require('path')
 const http = require('http')
 
-module.exports = function (address, staticDirectory, callback, debug) {
+module.exports = function (address, staticDirectory, callback) {
   invariant(typeof address === 'string', '`address` must be a string')
   invariant(typeof staticDirectory === 'string', '`staticDirectory` must be a string')
   invariant(typeof callback === 'function', '`callback` must be a function')
-  invariant(typeof debug === 'function', '`debug` must be a function')
 
   // configure the crawler
   const crawler = new Crawler(address)
@@ -86,7 +86,7 @@ module.exports = function (address, staticDirectory, callback, debug) {
   // return success message on complete
   crawler.on('complete', function () {
     spinner.stop();
-    callback('success');
+    callback(null, crawler);
   });
 
   // start crawling
