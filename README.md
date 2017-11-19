@@ -1,6 +1,6 @@
 ## stasis
 
-`stasis` is a command line utility to scrape a remote webpage to store locally.
+`stasis` is a command line utility to scrape webpage and create local version.
 
 ### Usage
 
