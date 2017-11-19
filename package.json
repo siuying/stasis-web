@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "static": "./bin/crawler.js"
+    "stasis": "./bin/stasis.js"
   },
   "dependencies": {
     "cli": "^1.0.1",
