@@ -1,0 +1,19 @@
+{
+  "name": "stasis-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "static": "./bin/crawler.js"
+  },
+  "dependencies": {
+    "cli": "^1.0.1",
+    "cli-spinner": "^0.2.7",
+    "debug": "^3.1.0",
+    "invariant": "^2.2.2",
+    "node-fs": "^0.1.7",
+    "replace": "^0.3.0",
+    "simplecrawler": "^1.1.6",
+    "sprintf": "^0.1.5"
+  }
+}
