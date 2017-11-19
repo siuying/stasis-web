@@ -2,6 +2,9 @@
 
 `stasis` is a command line utility to scrape webpage and create local version.
 
+I create this to create a static copy of my ghost blog such that I can host them 
+on static site like S3. This may or maynot work for your site, YMMV.
+
 ### Usage
 
 With [node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/):
