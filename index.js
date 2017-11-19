@@ -36,8 +36,19 @@ module.exports = function (address, staticDirectory, callback, debug) {
       parsed.pathname += 'index.html';
     }
 
-    let dirname = staticDirectory + path.dirname(parsed.pathname)
-    let filepath = staticDirectory + parsed.pathname
+    let ext = path.extname(parsed.pathname)
+    let dirname
+    let filepath
+
+    // if extension is empty, it is a folder
+    // save it as index.html in that folder
+    if (ext === "") {
+      dirname = staticDirectory + parsed.pathname
+      filepath = staticDirectory + parsed.pathname + "/index.html"
+    } else {
+      dirname = staticDirectory + path.dirname(parsed.pathname)
+      filepath = staticDirectory + parsed.pathname
+    }
 
     // Check if DIR exists
     fs.exists(dirname, function (exists) {
@@ -45,7 +56,7 @@ module.exports = function (address, staticDirectory, callback, debug) {
       // If DIR exists, write file
       if (exists) {
         fs.writeFile(filepath, responseBuffer, function () {
-          debug(sprintf('writeFile %s', filepath));
+          debug(sprintf('writeFile %s %s', parsed.pathname, filepath));
         });
 
       // Else, recursively create dir using node-fs, then write file
@@ -54,7 +65,7 @@ module.exports = function (address, staticDirectory, callback, debug) {
           debug(sprintf('mkdir %s', dirname));
 
           fs.writeFile(filepath, responseBuffer, function () {
-            debug(sprintf('writeFile %s', filepath));
+            debug(sprintf('writeFile %s %s', parsed.pathname, filepath));
           });
         });
       }
