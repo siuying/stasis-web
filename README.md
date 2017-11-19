@@ -27,7 +27,18 @@ stasis -a http://localhost:2368 -d ./static
 replace 'http://localhost:2368' 'http://mynewdomain.com' './static' -r -q
 ```
 
-After convert the web site to static file, you can publish it with anything you like:
+After convert the web site to static file, you can publish it with zeit [now-static](https://zeit.co/blog/now-static):
 
 ```
+cd ./static && now
+> Ready! https://static-xasaxasasax.now.sh (copied to clipboard) [3s]
 ```
+
+Or upload to [s3](http://docs.aws.amazon.com/cli/latest/reference/s3/index.html)
+
+```
+aws s3 website s3://my-bucket/ --index-document index.html --error-document error.html
+aws s3 cp --acl=public-read ./static s3://my-bucket/ --recursive
+```
+
+You might also upload with Apex [up](https://github.com/apex/up)
