@@ -169,6 +169,19 @@ sprintf@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/sprintf/-/sprintf-0.1.5.tgz#8f83e39a9317c1a502cb7db8050e51c679f6edcf"
 
+stasis-web@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stasis-web/-/stasis-web-1.0.0.tgz#d052280b188aa34be323c883525346b631e6ebd7"
+  dependencies:
+    cli "^1.0.1"
+    cli-spinner "^0.2.7"
+    debug "^3.1.0"
+    invariant "^2.2.2"
+    node-fs "^0.1.7"
+    replace "^0.3.0"
+    simplecrawler "^1.1.6"
+    sprintf "^0.1.5"
+
 underscore@~1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.4.4.tgz#61a6a32010622afa07963bf325203cf12239d604"

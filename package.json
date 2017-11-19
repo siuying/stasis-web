@@ -1,6 +1,6 @@
 {
   "name": "stasis-web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -12,8 +12,8 @@
     "debug": "^3.1.0",
     "invariant": "^2.2.2",
     "node-fs": "^0.1.7",
-    "replace": "^0.3.0",
     "simplecrawler": "^1.1.6",
-    "sprintf": "^0.1.5"
+    "sprintf": "^0.1.5",
+    "stasis-web": "^1.0.0"
   }
 }
