@@ -31,7 +31,7 @@ After convert the web site to static file, you can publish it with zeit [now-sta
 
 ```
 cd ./static && now
-> Ready! https://static-xasaxasasax.now.sh (copied to clipboard) [3s]
+> Ready! https://static-fkghqwgpbn.now.sh/ (copied to clipboard) [3s]
 ```
 
 Or upload to [s3](http://docs.aws.amazon.com/cli/latest/reference/s3/index.html)
